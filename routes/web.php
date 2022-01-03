@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Cabinet\LoginController;
+use App\Http\Controllers\Cabinet\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/user', function () {
+    return dd(1);
+});
+Route::get('/register', [RegisterController::class, 'show'])->name('show.register.form');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::get('/login', [LoginController::class, 'show'])->name('show.login.form');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
