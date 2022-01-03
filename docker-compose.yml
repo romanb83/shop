@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+    mysql:
+        image: mysql
+        volumes:
+           - ./storage/docker/mysql:/var/lib/mysql
+        environment:
+            MYSQL_HOST: localhost
+            MYSQL_USER: root
+            MYSQL_PASSWORD:
+            MYSQL_DB: shopdoc
+        ports:
+        -   "3306:3306"
+
