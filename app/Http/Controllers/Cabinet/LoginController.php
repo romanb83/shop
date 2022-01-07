@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public function show() {
+    public function show()
+    {
         return view('login');
     }
 
-    public function login() {
+    public function login()
+    {
         dd('Login');
     }
 }

@@ -20,9 +20,9 @@ Route::get('/', function () {
 });
 
 Route::get('/user', function () {
-    return dd(1);
+    return dd(__METHOD__);
 });
 Route::get('/register', [RegisterController::class, 'show'])->name('show.register.form');
-Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/login', [LoginController::class, 'show'])->name('show.login.form');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
