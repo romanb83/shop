@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/**------------------------------------------------------------------------------**/
+body {
+  font-family: Arial, sans-serif;
+  color: #636464;
+  font-size: 0.9rem;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+  justify-content: center;
+  background-color: #03a9f4;
+}
+
+.header {
+  display: flex;
+  background-color: #6b7280;
+  height: 120px;
+}
+
+footer {
+  flex: 0 0 auto;
+  background-color: #cbd5e0;
+  height: 100px;
+}
+
+.form {
+  max-width: 320px;
+  padding: 15px;
+  margin: 20px auto;
+  background-color: #fff;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  background-color: #1cbc11;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #14a20a;
+}

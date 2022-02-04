@@ -26,3 +26,4 @@ Route::get('/register', [RegisterController::class, 'show'])->name('show.registe
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 Route::get('/login', [LoginController::class, 'show'])->name('show.login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/register/{token}', [RegisterController::class, 'verify'])->name('register.verify');
