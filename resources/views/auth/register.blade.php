@@ -1,28 +1,37 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Регистрация</title>
-</head>
-<body>
+@extends('layouts.layout')
+
+@section('title', 'Регистрация')
+@section('content')
     <div>
-        <form method="post" action="{{ route('register') }}">
+        <form class="form" method="post" action="{{ route('register') }}">
             @csrf
-            <label for="name">Имя
-                <input type="text" name="username">
-            </label>
-            <label for="email">E-mail
-                <input type="email" name="email">
-            </label>
-            <label for="password">Пароль
-                <input type="password" name="password">
-            </label>
-            <label for="password_confirmation">Повторите пароль
-                <input type="password" name="password_confirmation">
-            </label>
-            <button type="submit">Зарегистрировать</button>
+            <div>
+                    <input class="input" type="text" name="username" placeholder="Имя пользователя">
+                    @error('username')
+                    <strong>{{ $message }}</strong>
+                    @enderror
+            </div>
+            <div>
+                    <input class="input" type="email" name="email" placeholder="E-mail">
+                    @error('email')
+                    <strong>{{ $message }}</strong>
+                    @enderror
+            </div>
+            <div>
+                    <input class="input" type="password" name="password" placeholder="Пароль">
+                    @error('password')
+                    <strong>{{ $message }}</strong>
+                    @enderror
+            </div>
+            <div>
+                    <input class="input" type="password" name="password_confirmation" placeholder="Повторите пароль">
+                    @error('password_confirmation')
+                    <strong>{{ $message }}</strong>
+                    @enderror
+            </div>
+            <div>
+                <button class="btn" type="submit">Зарегистрировать</button>
+            </div>
         </form>
     </div>
-</body>
-</html>
+@endsection

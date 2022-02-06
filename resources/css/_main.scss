@@ -1,0 +1,26 @@
+body {
+    font-family: $main_font;
+    color: $main_text_color;
+    font-size: $main_font_size;
+}
+.wrapper {
+    display: flex;
+    min-height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+}
+.main {
+    flex: 1 1 auto;
+    justify-content: center;
+    background-color: #03a9f4;
+}
+.header {
+    display: flex;
+    background-color: #6b7280;
+    height: 120px;
+}
+footer {
+    flex: 0 0 auto;
+    background-color: #cbd5e0;
+    height: 100px;
+}
