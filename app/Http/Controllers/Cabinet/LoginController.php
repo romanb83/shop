@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
     protected $redirectTo = '/register';
 
     public function show()
@@ -17,6 +18,8 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
+        
+
         $credentials = $request->only(['email','password']);
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/');
