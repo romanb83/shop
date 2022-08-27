@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Cabinet;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\RegisterRequest;
+use App\Http\Controllers\Controller; 
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Mail\Auth\VerifyMail;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
@@ -52,7 +52,6 @@ class RegisterController extends Controller
         $user->verify_token = null;
         $user->save();
 
-        return redirect()->route('show.login.form')->with('success','Ваша почта подтверждена! Авторизуйтесь');
+        return redirect()->route('show.login.form')->with('success', 'Ваша почта подтверждена! Авторизуйтесь');
     }
-
 }

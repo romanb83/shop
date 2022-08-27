@@ -3,14 +3,11 @@
 namespace App\Http\Controllers\Cabinet;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginRequest;
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-
-    protected $redirectTo = '/register';
-
     public function show()
     {
         return view('auth.login');
@@ -18,12 +15,15 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        
+        //TODO Сделать красивое сообщение о множественных попытках логина
+        $credentials = $request->only(['email', 'password']);
 
-        $credentials = $request->only(['email','password']);
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
+            $request->session()->regenerate();
+            return redirect()->intended('user');
         }
+
+        return back()->withErrors(['email' => 'Неверный e-mail']);
         dd($credentials);
     }
 }

@@ -86,4 +86,9 @@ class User extends Authenticatable
         return $this->role === self::ROLE_ADMIN;
     }
 
+    public function log()
+    {
+        return $this->hasOne(Log::class, 'user_id');
+    }
+
 }

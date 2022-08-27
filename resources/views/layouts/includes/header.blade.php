@@ -1,9 +1,10 @@
 <div class="container">
     <a href="/" class="logo" title="Логотип">
-        <img src="путь_к_картинке_логотипа" alt="Логотип">
+        <img src="" alt="Логотип">
     </a>
     <nav>
         <a href="{{ route('show.login.form') }}">Войти</a>
+        <a href="{{ route('show.register.form')}}">Регистрация</a>
         <a href="/">CSS</a>
         <a href="/">JS</a>
     </nav>
